@@ -1,0 +1,96 @@
+.hero {
+  padding: 40px 0;
+  padding: 5rem 10rem 0 10rem;
+  margin-bottom: 5rem;
+}
+
+.hero-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+}
+
+.premium-section {
+  background: linear-gradient(
+    135deg,
+    rgba(60, 80, 180, 0.8) 0%,
+    rgba(120, 40, 140, 0.8) 100%
+  );
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.shining-button {
+  background: linear-gradient(90deg, #3f51b5, #ff4081, #3f51b5);
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.shining-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg);
+  animation: shine-overlay 3s linear infinite;
+}
+
+@keyframes shine-overlay {
+  0% {
+    transform: rotate(45deg) translateY(-150%);
+  }
+  100% {
+    transform: rotate(45deg) translateY(150%);
+  }
+}
+
+.shining-button:hover {
+  box-shadow: 0 0 20px #ff4081;
+}
+
+.premium-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.premium-section h4 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.premium-section p {
+  color: #666;
+  margin-top: 20px;
+}
+
+.highlight {
+  color: blue;
+  font-size: x-large;
+  font-weight: bold;
+}

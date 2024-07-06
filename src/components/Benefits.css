@@ -1,0 +1,10 @@
+.benefits {
+  margin-bottom: 6rem;
+  padding: 0rem 10rem 10rem 10rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .benefits {
+    padding: 1rem;
+  }
+}
