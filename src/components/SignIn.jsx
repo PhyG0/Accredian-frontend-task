@@ -10,12 +10,10 @@ import {
   Alert,
 } from '@mui/material'
 import { styled } from '@mui/system'
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../authActions.jsx'
-import Navbar from './Navbar.jsx'
-import Footer from './Footer.jsx'
 
 import logo from '../assets/logo.png'
 

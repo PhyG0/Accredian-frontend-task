@@ -8,7 +8,6 @@ import {
   Toolbar,
   Button,
   IconButton,
-  Badge,
   Menu,
   MenuItem,
   Box,
@@ -20,11 +19,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import {
-  Notifications as NotificationsIcon,
-  Menu as MenuIcon,
-  Close as CloseIcon,
-} from '@mui/icons-material'
+import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 import { styled, alpha } from '@mui/system'
 import logo from '../assets/logo.png'
 
@@ -69,18 +64,12 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const [anchorEl, setAnchorEl] = useState(null)
-  const [unreadNotifications, setUnreadNotifications] = useState(3)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   const dispatch = useDispatch()
 
-  const handleNotificationClick = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
   const handleNotificationClose = () => {
     setAnchorEl(null)
-    setUnreadNotifications(0)
   }
 
   const toggleMobileMenu = () => {
@@ -108,7 +97,9 @@ const Navbar = () => {
     <StyledAppBar position="static">
       <StyledToolbar>
         <LeftSection>
-          <Logo src={logo} alt="Logo" />
+          <a href="https://accredian-frontend-task-tau-one.vercel.app/">
+            <Logo src={logo} alt="Logo" />
+          </a>
           {!isMobile && (
             <>
               <Button color="inherit" sx={{ color: 'black' }}>
@@ -121,11 +112,6 @@ const Navbar = () => {
           )}
         </LeftSection>
         <RightSection>
-          <IconButton color="inherit" onClick={handleNotificationClick}>
-            <Badge badgeContent={unreadNotifications} color="error">
-              <NotificationsIcon sx={{ color: 'black' }} />
-            </Badge>
-          </IconButton>
           {isMobile ? (
             <IconButton edge="end" color="inherit" onClick={toggleMobileMenu}>
               <MenuIcon sx={{ color: 'black' }} />

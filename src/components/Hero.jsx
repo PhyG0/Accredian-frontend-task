@@ -15,6 +15,7 @@ import heroBg from '../assets/hero-3.png'
 import './Hero.css'
 import { useSelector } from 'react-redux'
 import { CircularProgress } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 import Toast from './Toast'
 
 const HeroSection = () => {
@@ -31,6 +32,7 @@ const HeroSection = () => {
     message: '',
     severity: 'info',
   })
+  const navigate = useNavigate()
 
   const showToast = (message, severity = 'info') => {
     setToast({ open: true, message, severity })
@@ -44,6 +46,9 @@ const HeroSection = () => {
     setOpenModal(true)
     if (isLoggedIn === false) {
       setError('Must login to generate referral code')
+      setTimeout(() => {
+        navigate('/signup')
+      }, 2000)
       return
     }
     setIsLoading(true)
@@ -63,7 +68,8 @@ const HeroSection = () => {
         if (response.ok) {
           const json = await response.json()
           setReferralLink(
-            'http://localhost:5173/signup?referralCode=' + json.referralCode
+            'https://accredian-frontend-task-tau-one.vercel.app/signup?referralCode=' +
+              json.referralCode
           )
         } else {
           const json = await response.json()
