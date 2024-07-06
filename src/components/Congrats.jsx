@@ -31,7 +31,8 @@ const CongratulationsModal = ({ open, onClose }) => {
         <DialogTitle>Congratulations!</DialogTitle>
         <DialogContent>
           <Typography>
-            You have successfully referred a friend. Claim your reward now!
+            You have successfully completed referral process. Claim your reward
+            now!
           </Typography>
         </DialogContent>
         <DialogActions>
