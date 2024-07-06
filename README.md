@@ -1,8 +1,61 @@
-# React + Vite
+# Accerdian Refer and Earn Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a "Refer and Earn" landing page for Accerdian, featuring a referral system with user authentication and link generation.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User Authentication
+  - Sign Up
+  - Sign In
+- Refer and Earn System
+  - Refer Now button
+  - Referral link generation
+  - Share referral link via email or direct copy
+- Referral Link Processing
+  - New user sign-up through referral links
+
+## Components
+
+1. **Sign Up Page**
+   - New user registration form
+   - Fields: Username, Password, etc.
+
+2. **Sign In Page**
+   - Existing user login form
+   - Fields: Username, Password
+
+3. **Refer Now Option**
+   - Button on the main dashboard or user profile
+   - Triggers referral link generation
+
+4. **Referral Modal**
+   - Pops up when "Refer Now" is clicked
+   - Contains:
+     - Generated referral link
+     - Option to copy link directly
+     - Form to share link via email
+
+5. **Referral Link Processing**
+   - Handles new user sign-ups through referral links
+   - Tracks referral source
+
+## User Flow
+
+1. User signs up or signs in
+2. User navigates to their dashboard or profile
+3. User clicks "Refer Now" button
+4. Referral modal appears with generated link
+5. User copies link or shares via email
+6. New user signs up using the referral link
+
+## Installation and Setup
+
+npm i
+npm run dev
+
+## Technologies Used
+
+ReactJS
+MaterialUI
+Redux State Management
+
