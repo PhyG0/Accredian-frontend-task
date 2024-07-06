@@ -97,6 +97,11 @@ const HeroSection = () => {
       referralLink,
     }
 
+    if (!email || email === '') {
+      showToast('Please fill in all required fields', 'info')
+      return
+    }
+
     // Define the fetch request options
     const requestOptions = {
       method: 'POST',
